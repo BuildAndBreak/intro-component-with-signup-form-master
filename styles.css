@@ -1,0 +1,152 @@
+:root {
+  /*Primary colors*/
+  --primary-red: hsl(0, 100%, 74%);
+  --primary-green: hsl(154, 59%, 51%);
+  --primary-white: hsl(0, 0%, 100%);
+
+  /*Accent colors*/
+  --accent-blue: hsl(248, 32%, 49%);
+
+  /*Neutral colors*/
+  --neutral-dark-blue: hsl(249, 10%, 26%);
+  --neutral-grayish-blue: hsl(246, 25%, 77%);
+
+  /*Font-weight*/
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-image: url(/images/bg-intro-mobile.png);
+  background-color: var(--primary-red);
+  color: var(--primary-white);
+  font-family: "Poppins";
+  padding: 1rem;
+}
+
+.container-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.try-it-paragraph {
+  background-color: var(--accent-blue);
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 35rem;
+}
+
+.try-it-paragraph span {
+  font-weight: var(--fw-700);
+}
+
+.form-container {
+  background-color: var(--primary-white);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 35rem;
+}
+
+.input {
+  border-radius: 5px;
+  border: 1px solid var(--neutral-grayish-blue);
+  padding: 1rem;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--neutral-dark-blue);
+  padding-left: 5px;
+  font-weight: var(--fw-500);
+}
+
+.submit {
+  background-color: var(--primary-green);
+  color: var(--primary-white);
+  border-radius: 5px;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  width: 100%;
+  font-weight: var(--fw-600);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.submit:hover {
+  background-color: hsl(154, 76%, 23%);
+  transition: background 0.5s ease, transform 0.3s ease;
+}
+
+.input-control {
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+.form-container p {
+  color: var(--neutral-grayish-blue);
+  font-size: 13px;
+  margin-top: 0.5rem;
+}
+.form-container p span {
+  color: var(--primary-red);
+  cursor: pointer;
+  font-weight: var(--fw-600);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 5rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-image: url(images/bg-intro-desktop.png);
+  }
+
+  .container-parent {
+    flex-direction: row;
+    padding: 0 5rem;
+  }
+
+  .container-left {
+    width: 50%;
+    text-align: start;
+    padding: 5rem;
+  }
+
+  .container-right {
+    width: 50%;
+  }
+
+  h1 span::after {
+    content: "\A";
+    white-space: pre;
+  }
+}
