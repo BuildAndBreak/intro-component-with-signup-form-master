@@ -41,16 +41,25 @@ function checkInputs() {
     setErrorFor(password, "Password cannot be empty!");
     hasError = true;
   }
-  if (!uppercaseRegex.test(passwordValue)) {
+
+  if (
+    !uppercaseRegex.test(passwordValue) &&
+    !symbolRegex.test(passwordValue) &&
+    passwordValue.length < 6
+  ) {
+    setErrorFor(
+      password,
+      "Password must have at least one upper Case, one symbol and 6 characters!"
+    );
+    hasError = true;
+  } else if (passwordValue.length < 6) {
+    setErrorFor(password, "Password must have at least 6 characters!");
+    hasError = true;
+  } else if (!uppercaseRegex.test(passwordValue)) {
     setErrorFor(password, "Password must have at least one upper Case!");
     hasError = true;
-  }
-  if (!symbolRegex.test(passwordValue)) {
+  } else if (!symbolRegex.test(passwordValue)) {
     setErrorFor(password, "Password must have at least one symbol!");
-    hasError = true;
-  }
-  if (passwordValue.length < 6) {
-    setErrorFor(password, "Password must have at least 6 caracters!");
     hasError = true;
   }
   if (hasError) return;
@@ -60,8 +69,9 @@ function setErrorFor(input, message) {
   const inputControl = input.parentElement;
   const small = document.createElement("small");
   small.classList.add("message");
-  small.innerHTML = message;
   inputControl.appendChild(small);
+
+  small.innerHTML = message;
 
   input.addEventListener("input", () => {
     clearError(input);
