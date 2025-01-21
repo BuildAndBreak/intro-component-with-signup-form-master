@@ -55,6 +55,12 @@ h1 {
   margin-bottom: 1.5rem;
   width: 100%;
   max-width: 35rem;
+  cursor: pointer;
+}
+
+.try-it-paragraph:hover {
+  background-color: hsl(242, 40%, 32%);
+  transition: background 0.5s ease, transform 0.3s ease;
 }
 
 .try-it-paragraph span {
@@ -71,7 +77,7 @@ h1 {
 
 .input {
   border-radius: 5px;
-  border: 1px solid var(--neutral-grayish-blue);
+  border: 2px solid var(--neutral-grayish-blue);
   padding: 1rem;
   width: 100%;
 }
@@ -101,8 +107,9 @@ h1 {
 }
 
 .input-control {
-  padding-bottom: 1rem;
   border-radius: 1rem;
+  padding-bottom: 2rem;
+  position: relative;
 }
 
 .form-container p {
@@ -123,6 +130,15 @@ h1 {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* JS */
+
+.input-control small {
+  color: var(--primary-red);
+  position: absolute;
+  bottom: 10px;
+  left: 0;
 }
 
 @media (min-width: 1440px) {
