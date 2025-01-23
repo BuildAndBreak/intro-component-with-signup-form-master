@@ -141,6 +141,13 @@ h1 {
   left: 0;
 }
 
+.thumbs-up {
+  width: 1.5rem;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
 @media (min-width: 1440px) {
   body {
     background-image: url(images/bg-intro-desktop.png);
