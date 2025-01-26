@@ -6,10 +6,11 @@ const password = document.getElementById("password");
 const tryParagraph = document.getElementById("try-it-paragraph");
 
 form.addEventListener("submit", (e) => {
-  //prevents the form from submitting in the default way.
-  e.preventDefault();
   if (checkInputs()) {
     form.requestSubmit();
+  } else {
+    //prevents the form from submitting in the default way.
+    e.preventDefault();
   }
 });
 
