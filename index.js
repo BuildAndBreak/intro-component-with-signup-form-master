@@ -6,7 +6,7 @@ const password = document.getElementById("password");
 const tryParagraph = document.getElementById("try-it-paragraph");
 
 form.addEventListener("submit", (e) => {
-  //prevents the form from submitting in the default way
+  //prevents the form from submitting in the default way.
   e.preventDefault();
   if (checkInputs()) {
     form.requestSubmit();
@@ -14,7 +14,7 @@ form.addEventListener("submit", (e) => {
 });
 
 function checkInputs() {
-  //get the values from the inputs, trim() method is used to remove any spaces
+  //get the values from the inputs, trim() method is used to remove any spaces.
   const firstNameValue = firstName.value.trim();
   const lastNameValue = lastName.value.trim();
   const emailValue = email.value.trim();
@@ -75,14 +75,25 @@ function checkInputs() {
 }
 
 function setErrorFor(input, message) {
+  //gets the parent element of the input element.
   const inputControl = input.parentElement;
+  //checks if there's a <small> element inside the inputControl container.
   let small = inputControl.querySelector("small");
+  //if it exists, <small> is assigned with a truthy value, <small>Error message</small>.
+  //if it doesn't exist, <small>  is assigned null (a falsy value).
   if (!small) {
     small = document.createElement("small");
     small.classList.add("message");
+    //add the <small> element as a child of the inputControl;
     inputControl.appendChild(small);
   }
   small.innerHTML = message;
+  //searches within the inputControl element of the first <img> tag.
+  const validImg = inputControl.querySelector("img");
+  if (validImg) {
+    validImg.remove();
+  }
+  //every time the user types the error message is deleted.
   input.addEventListener("input", () => {
     clearError(input);
   });
@@ -97,6 +108,13 @@ function setSucessFor(input) {
     validImg.classList.add("thumbs-up");
     inputControl.appendChild(validImg);
   }
+  //it removes the validImg in case the setErrorFor function hasn't been called
+  //and the user has deleted the field.
+  input.addEventListener("input", () => {
+    if (input.value.trim() === "") {
+      validImg.remove();
+    }
+  });
 }
 
 function clearError(input) {
