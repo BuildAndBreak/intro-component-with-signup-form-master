@@ -64,11 +64,12 @@ I didn’t just make the layout work well on different screen sizes, show hover 
 I made sure the password is validated with at least 6 characters, an uppercase letter, and a symbol.
 I added a thumbs-up image when the user fills out a field correctly.
 I made the whole thing more interactive by giving instant feedback on correct input.
-These little extras really make the form feel more polished and user-friendly."
+These little extras really make the form feel more polished and user-friendly.
 
 ### Continued development
 
-I want to continue focusing in future projects by learning accessibility and Vanilla Javascript to have a better understanding of advanced concepts before I dive into React and other frameworks later. I believe that with this knowledge I can become more versatile.
+I want to continue focusing in future projects by learning accessibility and Vanilla Javascript to have a better understanding of advanced concepts before I dive into React and other frameworks later.
+I believe that with this knowledge I can become more versatile.
 
 ### Useful resources
 
