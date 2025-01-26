@@ -14,18 +14,18 @@
 </head>
 
 <body>
-  <div class="container-parent">
-    <div class="container-left">
+  <main class="container-parent">
+    <section class="container-left">
       <h1>Learn to code <span>by</span> watching others</h1>
 
       <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
         but understanding how developers think is invaluable.</p>
-    </div>
+    </section>
 
-    <div class="container-right">
+    <section class="container-right">
       <p id="try-it-paragraph" class="try-it-paragraph"><span>Try it free 7 days</span> then $20/mo. thereafter</p>
       <div class="form-container">
-        <form id="form" action="">
+        <form id="form" action="PUT">
           <div class="input-control">
             <input class="input" name="first-name" id="first-name" placeholder="First Name">
           </div>
@@ -42,15 +42,18 @@
             <input id="submit" class="submit" type="submit" value="Claim your free trial">
           </div>
         </form>
-        <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+        <p>By clicking the button, you are agreeing to our <a href="#" aria-label="Read our Terms and Services">Terms
+            and Services</a></p>
       </div>
-    </div>
-  </div>
-  </div>
+    </section>
+  </main>
+
   <footer>
     <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
-      Coded by <a href="https://social-links-buildandbreak.netlify.app/">Tiago Pereira</a>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        aria-label="Visit Frontend Mentor Challenge page">Frontend Mentor</a>
+      Coded by <a href="https://social-links-buildandbreak.netlify.app/"
+        aria-label="Visit Tiago Pereira's profile">Tiago Pereira</a>
     </p>
   </footer>
 

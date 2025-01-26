@@ -14,8 +14,7 @@ form.addEventListener("submit", (e) => {
 });
 
 function checkInputs() {
-  //get the values from the inputs
-  //trim method is used to remove any spaces
+  //get the values from the inputs, trim() method is used to remove any spaces
   const firstNameValue = firstName.value.trim();
   const lastNameValue = lastName.value.trim();
   const emailValue = email.value.trim();
@@ -32,6 +31,7 @@ function checkInputs() {
   } else {
     setSucessFor(firstName);
   }
+
   if (lastNameValue === "") {
     setErrorFor(lastName, "Last name cannot be empty!");
     formIsValid = false;
@@ -39,6 +39,7 @@ function checkInputs() {
   } else {
     setSucessFor(lastName);
   }
+
   if (emailValue === "") {
     setErrorFor(email, "Email cannot be empty!");
     formIsValid = false;
@@ -50,6 +51,7 @@ function checkInputs() {
   } else {
     setSucessFor(email);
   }
+
   if (passwordValue === "") {
     setErrorFor(password, "Password cannot be empty!");
     formIsValid = false;
@@ -107,7 +109,6 @@ function clearError(input) {
 
 function clearSucess(input) {
   const inputControl = input.parentElement;
-
   input.addEventListener("input", () => {
     const validImg = inputControl.querySelector("img");
     if (input.value.trim() === "" && validImg) {
